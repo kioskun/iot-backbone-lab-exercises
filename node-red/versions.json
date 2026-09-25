@@ -1,0 +1,89 @@
+{
+  "captured_date": "2026-09-18",
+  "node_red_version": "4.0.5",
+  "node_js_version": "v20.19.0",
+  "node_js_arch": "arm64",
+  "node_js_platform": "linux",
+  "operating_system": {
+    "type": "Linux",
+    "platform": "linux",
+    "arch": "arm64",
+    "release": "6.6.74+rpt-rpi-v8",
+    "version": "#1 SMP PREEMPT Debian 1:6.6.74-1+rpt1 (2025-01-27)"
+  },
+  "raspberry_pi_model": "Raspberry Pi 4 Model B (2 GB)",
+  "modules": [
+    {
+      "module": "node-red",
+      "version": "4.0.5",
+      "types_used_by_flow": [
+        "debug",
+        "function",
+        "mqtt in",
+        "mqtt-broker"
+      ],
+      "used_by_exported_flow": true
+    },
+    {
+      "module": "node-red-contrib-buffer-parser",
+      "version": "3.2.2",
+      "types_used_by_flow": [],
+      "used_by_exported_flow": false
+    },
+    {
+      "module": "node-red-contrib-play-audio",
+      "version": "2.5.0",
+      "types_used_by_flow": [],
+      "used_by_exported_flow": false
+    },
+    {
+      "module": "node-red-contrib-ui-led2",
+      "version": "0.4.19",
+      "types_used_by_flow": [
+        "ui_led2"
+      ],
+      "used_by_exported_flow": true
+    },
+    {
+      "module": "node-red-dashboard",
+      "version": "3.6.5",
+      "types_used_by_flow": [
+        "ui_base",
+        "ui_gauge",
+        "ui_group",
+        "ui_tab"
+      ],
+      "used_by_exported_flow": true
+    },
+    {
+      "module": "node-red-node-pi-gpio",
+      "version": "2.0.6",
+      "types_used_by_flow": [],
+      "used_by_exported_flow": false
+    },
+    {
+      "module": "node-red-node-ping",
+      "version": "0.3.3",
+      "types_used_by_flow": [],
+      "used_by_exported_flow": false
+    },
+    {
+      "module": "node-red-node-random",
+      "version": "0.4.1",
+      "types_used_by_flow": [],
+      "used_by_exported_flow": false
+    },
+    {
+      "module": "node-red-node-serialport",
+      "version": "2.0.3",
+      "types_used_by_flow": [],
+      "used_by_exported_flow": false
+    },
+    {
+      "module": "node-red-node-smooth",
+      "version": "0.1.2",
+      "types_used_by_flow": [],
+      "used_by_exported_flow": false
+    }
+  ]
+}

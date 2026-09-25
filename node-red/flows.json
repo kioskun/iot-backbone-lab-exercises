@@ -1,0 +1,413 @@
+[
+  {
+    "id": "8bbf5f6b837b51db",
+    "type": "tab",
+    "label": "Flow 1",
+    "disabled": false,
+    "info": "",
+    "env": []
+  },
+  {
+    "id": "7e53eb6a39702945",
+    "type": "ui_tab",
+    "name": "Home",
+    "icon": "dashboard",
+    "disabled": false,
+    "hidden": false
+  },
+  {
+    "id": "5208a190719faedc",
+    "type": "ui_base",
+    "theme": {
+      "name": "theme-light",
+      "lightTheme": {
+        "default": "#0094CE",
+        "baseColor": "#0094CE",
+        "baseFont": "-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Oxygen-Sans,Ubuntu,Cantarell,Helvetica Neue,sans-serif",
+        "edited": true,
+        "reset": false
+      },
+      "darkTheme": {
+        "default": "#097479",
+        "baseColor": "#097479",
+        "baseFont": "-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Oxygen-Sans,Ubuntu,Cantarell,Helvetica Neue,sans-serif",
+        "edited": false
+      },
+      "customTheme": {
+        "name": "Untitled Theme 1",
+        "default": "#4B7930",
+        "baseColor": "#4B7930",
+        "baseFont": "-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Oxygen-Sans,Ubuntu,Cantarell,Helvetica Neue,sans-serif"
+      },
+      "themeState": {
+        "base-color": {
+          "default": "#0094CE",
+          "value": "#0094CE",
+          "edited": false
+        },
+        "page-titlebar-backgroundColor": {
+          "value": "#0094CE",
+          "edited": false
+        },
+        "page-backgroundColor": {
+          "value": "#fafafa",
+          "edited": false
+        },
+        "page-sidebar-backgroundColor": {
+          "value": "#ffffff",
+          "edited": false
+        },
+        "group-textColor": {
+          "value": "#1bbfff",
+          "edited": false
+        },
+        "group-borderColor": {
+          "value": "#ffffff",
+          "edited": false
+        },
+        "group-backgroundColor": {
+          "value": "#ffffff",
+          "edited": false
+        },
+        "widget-textColor": {
+          "value": "#111111",
+          "edited": false
+        },
+        "widget-backgroundColor": {
+          "value": "#0094ce",
+          "edited": false
+        },
+        "widget-borderColor": {
+          "value": "#ffffff",
+          "edited": false
+        },
+        "base-font": {
+          "value": "-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Oxygen-Sans,Ubuntu,Cantarell,Helvetica Neue,sans-serif"
+        }
+      },
+      "angularTheme": {
+        "primary": "indigo",
+        "accents": "blue",
+        "warn": "red",
+        "background": "grey",
+        "palette": "light"
+      }
+    },
+    "site": {
+      "name": "Node-RED Dashboard",
+      "hideToolbar": "false",
+      "allowSwipe": "false",
+      "lockMenu": "false",
+      "allowTempTheme": "true",
+      "dateFormat": "DD/MM/YYYY",
+      "sizes": {
+        "sx": 48,
+        "sy": 48,
+        "gx": 6,
+        "gy": 6,
+        "cx": 6,
+        "cy": 6,
+        "px": 0,
+        "py": 0
+      }
+    }
+  },
+  {
+    "id": "8f4b2bfd83da2080",
+    "type": "mqtt-broker",
+    "name": "TTN MQTT Connection",
+    "broker": "eu1.cloud.thethings.network",
+    "port": "8883",
+    "tls": "",
+    "clientid": "",
+    "autoConnect": true,
+    "usetls": true,
+    "protocolVersion": "4",
+    "keepalive": "60",
+    "cleansession": true,
+    "autoUnsubscribe": true,
+    "birthTopic": "",
+    "birthQos": "0",
+    "birthRetain": "false",
+    "birthPayload": "",
+    "birthMsg": {},
+    "closeTopic": "",
+    "closeQos": "0",
+    "closeRetain": "false",
+    "closePayload": "",
+    "closeMsg": {},
+    "willTopic": "",
+    "willQos": "0",
+    "willRetain": "false",
+    "willPayload": "",
+    "willMsg": {},
+    "userProps": "",
+    "sessionExpiry": ""
+  },
+  {
+    "id": "c73947f6a8af1c4c",
+    "type": "ui_group",
+    "name": "DHT11",
+    "tab": "7e53eb6a39702945",
+    "order": 2,
+    "disp": true,
+    "width": "6",
+    "collapse": false,
+    "className": ""
+  },
+  {
+    "id": "97d7a9c32a5a6917",
+    "type": "ui_group",
+    "name": "LED Status",
+    "tab": "7e53eb6a39702945",
+    "order": 3,
+    "disp": true,
+    "width": "6",
+    "collapse": false,
+    "className": ""
+  },
+  {
+    "id": "83a54928c006986f",
+    "type": "mqtt in",
+    "z": "8bbf5f6b837b51db",
+    "name": "TNN",
+    "topic": "v3/REPLACE_APPLICATION_ID@ttn/devices/REPLACE_DEVICE_ID/up",
+    "qos": "2",
+    "datatype": "auto-detect",
+    "broker": "8f4b2bfd83da2080",
+    "nl": false,
+    "rap": true,
+    "rh": 0,
+    "inputs": 0,
+    "x": 90,
+    "y": 260,
+    "wires": [
+      [
+        "d5b9ddb140ddf858",
+        "7813493fccb00c2a"
+      ]
+    ]
+  },
+  {
+    "id": "1b018e253d35b2dc",
+    "type": "ui_gauge",
+    "z": "8bbf5f6b837b51db",
+    "name": "",
+    "group": "c73947f6a8af1c4c",
+    "order": 0,
+    "width": "0",
+    "height": "0",
+    "gtype": "gage",
+    "title": "Temperature",
+    "label": "°C",
+    "format": "{{value | number:1}}",
+    "min": "-10",
+    "max": "60",
+    "colors": [
+      "#00b500",
+      "#e6e600",
+      "#ca3838"
+    ],
+    "seg1": "",
+    "seg2": "",
+    "diff": false,
+    "className": "",
+    "x": 790,
+    "y": 100,
+    "wires": []
+  },
+  {
+    "id": "8656985e2687a7f2",
+    "type": "ui_gauge",
+    "z": "8bbf5f6b837b51db",
+    "name": "",
+    "group": "c73947f6a8af1c4c",
+    "order": 1,
+    "width": "0",
+    "height": "0",
+    "gtype": "gage",
+    "title": "Humidity",
+    "label": "%",
+    "format": "{{value}}",
+    "min": 0,
+    "max": "100",
+    "colors": [
+      "#00b500",
+      "#e6e600",
+      "#ca3838"
+    ],
+    "seg1": "",
+    "seg2": "",
+    "diff": false,
+    "className": "",
+    "x": 780,
+    "y": 220,
+    "wires": []
+  },
+  {
+    "id": "d5b9ddb140ddf858",
+    "type": "debug",
+    "z": "8bbf5f6b837b51db",
+    "name": "debug 1",
+    "active": false,
+    "tosidebar": true,
+    "console": false,
+    "tostatus": false,
+    "complete": "payload",
+    "targetType": "msg",
+    "statusVal": "",
+    "statusType": "auto",
+    "x": 400,
+    "y": 400,
+    "wires": []
+  },
+  {
+    "id": "7813493fccb00c2a",
+    "type": "function",
+    "z": "8bbf5f6b837b51db",
+    "name": "function 1",
+    "func": "let data = msg.payload.uplink_message.decoded_payload;\n\nlet temp = data.DHT_Temp;   // Temperature\nlet hum = data.DHT_Hum;    // Humidity\nlet photo = data.Photo;      // Photoresistor value (numeric)\nlet led = (photo < 2000) ? 1 : 0; // LED value (ensure it's a number)\n\nreturn [\n    { payload: temp },\n    { payload: hum },\n    { payload: photo },\n    { payload: led }\n];\n",
+    "outputs": 4,
+    "timeout": 0,
+    "noerr": 0,
+    "initialize": "",
+    "finalize": "",
+    "libs": [],
+    "x": 500,
+    "y": 180,
+    "wires": [
+      [
+        "1b018e253d35b2dc",
+        "ffbd6a56480d8e59"
+      ],
+      [
+        "8656985e2687a7f2",
+        "5afde25ceac93a02"
+      ],
+      [
+        "a20b067c442b33a0"
+      ],
+      [
+        "765a6d12c4978b93"
+      ]
+    ]
+  },
+  {
+    "id": "0337781996769055",
+    "type": "ui_led2",
+    "z": "8bbf5f6b837b51db",
+    "order": 2,
+    "group": "97d7a9c32a5a6917",
+    "width": 0,
+    "height": 0,
+    "label": "Daylight Sensor",
+    "property": "payload",
+    "labelPlacement": "right",
+    "labelAlignment": "left",
+    "colorForValue": [
+      {
+        "color": "#ff0000",
+        "value": "low",
+        "valueType": "str"
+      },
+      {
+        "color": "#008000",
+        "value": "high",
+        "valueType": "str"
+      }
+    ],
+    "allowColorForValueInMessage": false,
+    "shape": "circle",
+    "showGlow": true,
+    "name": "Daylight Sensor",
+    "x": 1020,
+    "y": 340,
+    "wires": []
+  },
+  {
+    "id": "765a6d12c4978b93",
+    "type": "ui_led2",
+    "z": "8bbf5f6b837b51db",
+    "order": 2,
+    "group": "97d7a9c32a5a6917",
+    "width": 0,
+    "height": 0,
+    "label": "Lights",
+    "property": "payload",
+    "labelPlacement": "right",
+    "labelAlignment": "left",
+    "colorForValue": [
+      {
+        "color": "#ff0000",
+        "value": "0",
+        "valueType": "num"
+      },
+      {
+        "color": "#008000",
+        "value": "1",
+        "valueType": "num"
+      }
+    ],
+    "allowColorForValueInMessage": false,
+    "shape": "circle",
+    "showGlow": true,
+    "name": "Lights",
+    "x": 770,
+    "y": 420,
+    "wires": []
+  },
+  {
+    "id": "a20b067c442b33a0",
+    "type": "function",
+    "z": "8bbf5f6b837b51db",
+    "name": "function 2",
+    "func": "if (msg.payload < 2000) {\n    msg.payload = \"low\";\n} else {\n    msg.payload = \"high\";\n}\nreturn msg;",
+    "outputs": 1,
+    "timeout": 0,
+    "noerr": 0,
+    "initialize": "",
+    "finalize": "",
+    "libs": [],
+    "x": 780,
+    "y": 320,
+    "wires": [
+      [
+        "0337781996769055"
+      ]
+    ]
+  },
+  {
+    "id": "ffbd6a56480d8e59",
+    "type": "debug",
+    "z": "8bbf5f6b837b51db",
+    "name": "Temp debug",
+    "active": true,
+    "tosidebar": true,
+    "console": false,
+    "tostatus": false,
+    "complete": "payload",
+    "targetType": "msg",
+    "statusVal": "",
+    "statusType": "auto",
+    "x": 790,
+    "y": 140,
+    "wires": []
+  },
+  {
+    "id": "5afde25ceac93a02",
+    "type": "debug",
+    "z": "8bbf5f6b837b51db",
+    "name": "Hum debug",
+    "active": true,
+    "tosidebar": true,
+    "console": false,
+    "tostatus": false,
+    "complete": "payload",
+    "targetType": "msg",
+    "statusVal": "",
+    "statusType": "auto",
+    "x": 790,
+    "y": 260,
+    "wires": []
+  }
+]

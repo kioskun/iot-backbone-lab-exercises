@@ -1,0 +1,58 @@
+<div class="sensor-setup">
+  <div class="sensor-info">
+    <h2>DHT11 Temperature & Humidity Sensor</h2>
+    <p>The DHT11 is a basic, ultra low-cost digital temperature and humidity sensor. It uses a capacitive humidity sensor and a thermistor to measure the surrounding air, and outputs a digital signal on the data pin.</p>
+    
+    <div class="sensor-image">
+      <img src="/images/DHT11-Sensor.jpg" alt="DHT11 Sensor" style="max-width: 100%; height: auto; margin: 20px 0;">
+    </div>
+    
+    <h3>Technical Specifications</h3>
+    <div class="sensor-specs">
+      <div class="spec-item">
+        <div class="spec-title">Operating Voltage</div>
+        <div class="spec-value">3.3V - 5V</div>
+      </div>
+      <div class="spec-item">
+        <div class="spec-title">Temperature Range</div>
+        <div class="spec-value">0°C to 50°C</div>
+      </div>
+      <div class="spec-item">
+        <div class="spec-title">Temperature Accuracy</div>
+        <div class="spec-value">±2°C</div>
+      </div>
+      <div class="spec-item">
+        <div class="spec-title">Humidity Range</div>
+        <div class="spec-value">20% to 90% RH</div>
+      </div>
+      <div class="spec-item">
+        <div class="spec-title">Humidity Accuracy</div>
+        <div class="spec-value">±5% RH</div>
+      </div>
+      <div class="spec-item">
+        <div class="spec-title">Sampling Rate</div>
+        <div class="spec-value">1 Hz (once every second)</div>
+      </div>
+    </div>
+    
+    <h3>Connection to TTGO LoRa32</h3>
+    <p>The DHT11 sensor is connected to the TTGO LoRa32 board as follows:</p>
+    <ul class="connection-list">
+      <li><strong>VCC</strong> → 3.3V</li>
+      <li><strong>DATA</strong> → GPIO13</li>
+      <li><strong>GND</strong> → GND</li>
+    </ul>
+    
+    <div class="wiring-diagram">
+      <img src="/images/dht11_wiring.png" alt="DHT11 Wiring Diagram" style="max-width: 100%; height: auto; margin: 20px 0;">
+    </div>
+    
+    <h3>Implementation Notes</h3>
+    <ul class="notes-list">
+      <li>The DHT11 uses a single-wire protocol for communication</li>
+      <li>Internal pull-up resistor is used in this implementation</li>
+      <li>Readings are taken every 2.5 seconds to avoid overheating the sensor</li>
+      <li>The sensor can be enabled/disabled through the web interface</li>
+    </ul>
+  </div>
+</div>

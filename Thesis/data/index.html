@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>IoT Environmental Monitoring System</title>
+  <!-- Import Roboto font from Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="/style.css" />
+  <!-- Chart.js from CDN -->
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body class="fade-in">
+  <header>
+    <div class="logo">IoT Environmental Monitor</div>
+    <nav class="main-nav">
+      <ul class="nav-menu">
+        <li><a href="#" onclick="loadPage('/control_panel.partial.html'); return false;">Dashboard</a></li>
+        <li><a href="#" onclick="loadPage('/dht_setup.partial.html'); return false;">Temperature & Humidity</a></li>
+        <li><a href="#" onclick="loadPage('/photo_setup.partial.html'); return false;">Light Sensor</a></li>
+		<li><a href="#" onclick="loadPage('/wifi_setup.partial.html'); return false;">Wi-Fi Settings</a></li>
+      </ul>
+    </nav>
+    <div id="bell"><span>🔔</span></div>
+  </header>
+  
+  <!-- Main content container -->
+  <div id="content"></div>
+
+  <!-- Toast overlay for notifications -->
+  <div id="toast"></div>
+
+  <footer>
+    <p>IoT Environmental Monitoring System - LoRaWAN Technology</p>
+    <p>University Laboratory Project</p>
+  </footer>
+
+  <script src="/script.js"></script>
+  <script src="/chart.umd.min.js"></script>
+</body>
+</html>

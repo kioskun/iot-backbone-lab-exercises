@@ -1,0 +1,113 @@
+<div class="dashboard">
+  <!-- DHT Sensor Card -->
+  <div class="card">
+    <div class="card-header">
+      <h2 class="card-title">Temperature & Humidity</h2>
+      <div class="toggle-container">
+        <span class="toggle-label">Enable</span>
+        <label class="toggle-switch">
+          <input type="checkbox" id="DHTToggle" onchange="toggleSensor('DHT', this.checked)">
+          <span class="toggle-slider"></span>
+        </label>
+      </div>
+    </div>
+	<div id="DHTCardBody" class="card-body show-panel">
+		<div class="status-container">
+		  <div id="DHTCircle" class="status-circle inactive"></div>
+		  <span id="DHTStatus" class="status-text">Inactive</span>
+		</div>
+		<div class="sensor-readings">
+		  <div class="reading">
+			<span class="reading-label">Temperature:</span>
+			<span id="currentTemp" class="reading-value">--°C</span>
+		  </div>
+		  <div class="reading">
+			<span class="reading-label">Humidity:</span>
+			<span id="currentHum" class="reading-value">--%</span>
+		  </div>
+		</div>
+	  </div>
+	</div>
+  <!-- Photoresistor Sensor Card -->
+  <div class="card">
+    <div class="card-header">
+      <h2 class="card-title">Light Sensor</h2>
+      <div class="toggle-container">
+        <span class="toggle-label">Enable</span>
+        <label class="toggle-switch">
+          <input type="checkbox" id="PhotoresistorToggle" onchange="toggleSensor('Photoresistor', this.checked)">
+          <span class="toggle-slider"></span>
+        </label>
+      </div>
+    </div>
+	<div id="PhotoCardBody" class="card-body show-panel">
+		<div class="status-container">
+		  <div id="PhotoresistorCircle" class="status-circle inactive"></div>
+		  <span id="PhotoresistorStatus" class="status-text">Inactive</span>
+		</div>
+		<div class="sensor-readings">
+		  <div class="reading">
+			<span class="reading-label">Light Level:</span>
+			<span id="currentLight" class="reading-value">--</span>
+		  </div>
+		  <div class="reading">
+			<span class="reading-label">LED Status:</span>
+			<span id="ledState" class="reading-value">--</span>
+		  </div>
+		</div>
+	  </div>
+	</div>
+  <!-- System Status Card -->
+  <div class="card">
+    <div class="card-header">
+      <h2 class="card-title">System Status</h2>
+    </div>
+    <div class="system-info">
+      <div class="info-item">
+        <span class="info-label">Device:</span>
+        <span class="info-value">TTGO LoRa32 SX1276</span>
+      </div>
+      <div class="info-item">
+        <span class="info-label">Network:</span>
+        <span class="info-value">LoRaWAN (TTN)</span>
+      </div>
+      <div class="info-item">
+        <span class="info-label">Uptime:</span>
+        <span class="info-value" id="uptime">--:--:--</span>
+      </div>
+      <div class="info-item">
+        <span class="info-label">Last Transmission:</span>
+        <span class="info-value" id="lastTx">--:--:--</span>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Charts Section -->
+<div class="charts-section">
+  <h2>Sensor Data Visualization</h2>
+  
+  <!-- DHT Temperature Chart -->
+  <div id="dhtTempChartContainer" class="chart-card show-panel">
+	<h3>Temperature History</h3>
+	<div class="chart-container">
+	  <canvas id="dhtTempChart"></canvas>
+	</div>
+  </div>
+  
+  <!-- DHT Humidity Chart -->
+  <div id="dhtHumChartContainer" class="chart-card show-panel">
+	<h3>Humidity History</h3>
+	<div class="chart-container">
+	  <canvas id="dhtHumChart"></canvas>
+	</div>
+  </div>
+  
+  <!-- Photoresistor Chart -->
+  <div id="photoChartContainer" class="chart-card show-panel">
+	<h3>Light Level History</h3>
+	<div class="chart-container">
+	  <canvas id="photoChart"></canvas>
+	</div>
+  </div>
+</div>

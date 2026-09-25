@@ -1,0 +1,32 @@
+<!-- wifi_setup.partial.html -->
+<div class="wifi-setup fade-in">
+  <div class="wifi-card">
+    <h2 class="wifi-title">Wi-Fi Configuration</h2>
+    <p>Update the stored network SSID and password below. The device will reboot to apply changes.</p>
+
+    <!-- Card section for existing creds -->
+    <div class="wifi-section">
+      <h3>Currently Stored Credentials</h3>
+      <p><strong>SSID:</strong> <span id="currentSsid">--</span></p>
+      <p><strong>Password:</strong> <span id="currentPass">--</span></p>
+    </div>
+
+    <!-- Card section for new credentials -->
+    <div class="wifi-section">
+      <h3>New Wi-Fi Settings</h3>
+      <label for="newSsid" class="wifi-label">SSID:</label>
+      <input type="text" id="newSsid" class="wifi-input" placeholder="Enter new SSID" />
+
+      <label for="newPass" class="wifi-label">Password:</label>
+      <input type="password" id="newPass" class="wifi-input" placeholder="Enter new password" />
+
+      <button class="deploy-btn" onclick="deployWifiSettings()">Deploy</button>
+    </div>
+
+    <!-- Alert box for warning -->
+    <div class="alert-box">
+      <span class="alert-icon">⚠</span>
+      <p>Warning: This action will reboot the device.</p>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,61 @@
+<div class="sensor-setup">
+  <div class="sensor-info">
+    <h2>Photoresistor with LED Control</h2>
+    <p>The photoresistor (or Light Dependent Resistor - LDR) is an analog sensor that changes its resistance based on the amount of light falling on it. In this implementation, it's paired with an LED that automatically turns on in low light conditions.</p>
+    
+    <div class="sensor-image">
+      <img src="/images/photoresistor.jpg" alt="Photoresistor" style="max-width: 100%; height: auto; margin: 20px 0;">
+    </div>
+    
+    <h3>Technical Specifications</h3>
+    <div class="sensor-specs">
+      <div class="spec-item">
+        <div class="spec-title">Operating Voltage</div>
+        <div class="spec-value">3.3V - 5V</div>
+      </div>
+      <div class="spec-item">
+        <div class="spec-title">Light Resistance</div>
+        <div class="spec-value">5KΩ - 10KΩ (bright light)</div>
+      </div>
+      <div class="spec-item">
+        <div class="spec-title">Dark Resistance</div>
+        <div class="spec-value">Up to 1MΩ (darkness)</div>
+      </div>
+      <div class="spec-item">
+        <div class="spec-title">Analog Output</div>
+        <div class="spec-value">0-4095 (ESP32 ADC)</div>
+      </div>
+      <div class="spec-item">
+        <div class="spec-title">Response Time</div>
+        <div class="spec-value">~20-30ms</div>
+      </div>
+      <div class="spec-item">
+        <div class="spec-title">LED Forward Voltage</div>
+        <div class="spec-value">~2V (typical)</div>
+      </div>
+    </div>
+    
+    <h3>Connection to TTGO LoRa32</h3>
+    <p>The photoresistor and LED are connected to the TTGO LoRa32 board as follows:</p>
+    <ul class="connection-list">
+      <li><strong>Photoresistor VCC</strong> → 3.3V</li>
+      <li><strong>Photoresistor Signal</strong> → GPIO36 (Analog Input)</li>
+      <li><strong>LED Control</strong> → GPIO17 (Digital Output)</li>
+      <li><strong>GND</strong> → GND</li>
+    </ul>
+    
+    <div class="wiring-diagram">
+      <img src="/images/photoresistor_wiring.png" alt="Photoresistor Wiring Diagram" style="max-width: 100%; height: auto; margin: 20px 0;">
+    </div>
+    
+    <h3>Implementation Notes</h3>
+    <ul class="notes-list">
+      <li>The photoresistor is connected in a voltage divider configuration</li>
+      <li>A 220Ω current-limiting resistor is used for the LED</li>
+	  <li>and a 10kΩ current-limiting resistor is used for the Photoresistor</li>
+      <li>The LED automatically turns on when light level falls below a threshold</li>
+      <li>Threshold is set to 2000 (out of 4095) by default</li>
+      <li>The sensor can be enabled/disabled through the web interface</li>
+    </ul>
+  </div>
+</div>
